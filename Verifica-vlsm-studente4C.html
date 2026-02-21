@@ -743,7 +743,7 @@
             Completa la tabella seguente calcolando gli indirizzi per ciascuna subnet.
             Parti dalla subnet più grande e procedi in ordine decrescente: ogni subnet inizia 
             subito dopo l'indirizzo di broadcast della precedente. 
-            Usa i segnaposto <span class="placeholder-cell" style="font-size:12px">___.___.___._______</span> per inserire i valori corretti.
+            Usa i segnaposto <span class="placeholder-cell" style="font-size:12px">192.168.0.x</span> per inserire i valori corretti.
         </p>
     </div>
     <p>
@@ -993,7 +993,6 @@
                 </table>
             </div>
             <div class="img-placeholder">
-			Screenshot5_collegamentoPcs
 			 <img src = "Screenshot5_collegamentoPcs.png">
                </div>
         </div>
@@ -1344,97 +1343,71 @@ Default Gateway: <span class="comment">(lasciare vuoto)</span>
         organizzati secondo i livelli del modello OSI/TCP-IP. Analizziamoli uno per uno.
     </p>
 
-    <div class="packet-view">
-        <div class="packet-header">📦 PDU Information — ICMP Echo Request (Ping)</div>
+   <div class="packet-view">
+    <div class="packet-header">📦 PDU Information — ICMP Echo Request (Ping)</div>
 
-        <div class="packet-layer">
-            <div class="packet-layer-title">
-                <span class="layer-dot" style="background: var(--accent-orange);"></span>
-                <span style="color: var(--accent-orange);">Layer 1 — Physical (Livello Fisico)</span>
-            </div>
-            <div class="packet-field">
-                <span class="field-name">Port</span>
-                <span class="field-value">FastEthernet0</span>
-            </div>
-            <div class="packet-field">
-                <span class="field-name">Link Status</span>
-                <span class="field-value">Up</span>
-            </div>
-            <div class="packet-field">
-                <span class="field-name">Bandwidth</span>
-                <span class="field-value">100 Mbps</span>
-            </div>
+    <div class="packet-layer">
+        <div class="packet-layer-title">
+            <span class="layer-dot" style="background: var(--accent-orange);"></span>
+            <span style="color: var(--accent-orange);">Layer 1 — Physical (Livello Fisico)</span>
         </div>
-
-        <div class="packet-layer">
-            <div class="packet-layer-title">
-                <span class="layer-dot" style="background: var(--accent-blue);"></span>
-                <span style="color: var(--accent-blue);">Layer 2 — Data Link (Ethernet II)</span>
-            </div>
-            <div class="packet-field">
-                <span class="field-name">Src MAC Address</span>
-                <span class="field-value" style="color: var(--accent-pink);">____:____:____  (MAC di PC-Alfa1)</span>
-            </div>
-            <div class="packet-field">
-                <span class="field-name">Dest MAC Address</span>
-                <span class="field-value" style="color: var(--accent-pink);">____:____:____  (MAC di PC-Alfa2)</span>
-            </div>
-            <div class="packet-field">
-                <span class="field-name">EtherType</span>
-                <span class="field-value">0x0800 (IPv4)</span>
-            </div>
+        <div class="packet-field">
+            <span class="field-name">Port</span>
+            <span class="field-value">FastEthernet0</span>
         </div>
+        <div class="packet-field">
+            <span class="field-name">Link Status</span>
+            <span class="field-value"></span> </div>
+        <div class="packet-field">
+            <span class="field-name">Bandwidth</span>
+            <span class="field-value"></span> </div>
+    </div>
 
-        <div class="packet-layer">
-            <div class="packet-layer-title">
-                <span class="layer-dot" style="background: var(--accent-green);"></span>
-                <span style="color: var(--accent-green);">Layer 3 — Network (IPv4)</span>
-            </div>
-            <div class="packet-field">
-                <span class="field-name">Version</span>
-                <span class="field-value">4 (IPv4)</span>
-            </div>
-            <div class="packet-field">
-                <span class="field-name">Header Length</span>
-                <span class="field-value">20 bytes</span>
-            </div>
-            <div class="packet-field">
-                <span class="field-name">TTL (Time To Live)</span>
-                <span class="field-value">128</span>
-            </div>
-            <div class="packet-field">
-                <span class="field-name">Protocol</span>
-                <span class="field-value">1 (ICMP)</span>
-            </div>
-            <div class="packet-field">
-                <span class="field-name">Source IP</span>
-                <span class="field-value" style="color: var(--accent-pink);">192.168.0.______  (IP di PC-Alfa1)</span>
-            </div>
-            <div class="packet-field">
-                <span class="field-name">Destination IP</span>
-                <span class="field-value" style="color: var(--accent-pink);">192.168.0.______  (IP di PC-Alfa2)</span>
-            </div>
+    <div class="packet-layer">
+        <div class="packet-layer-title">
+            <span class="layer-dot" style="background: var(--accent-blue);"></span>
+            <span style="color: var(--accent-blue);">Layer 2 — Data Link (Ethernet II)</span>
         </div>
+        <div class="packet-field">
+            <span class="field-name">Src MAC Address</span>
+            <span class="field-value" style="color: var(--accent-pink);">000A.411D.C6B6 (MAC di PC-Alfa1)</span>
+        </div>
+        <div class="packet-field">
+            <span class="field-name">Dest MAC Address</span>
+            <span class="field-value" style="color: var(--accent-pink);">0001.C978.0522 (MAC di PC-Alfa2)</span>
+        </div>
+        <div class="packet-field">
+            <span class="field-name">EtherType</span>
+            <span class="field-value"></span> </div>
+    </div>
 
-        <div class="packet-layer">
-            <div class="packet-layer-title">
-                <span class="layer-dot" style="background: var(--accent-purple);"></span>
-                <span style="color: var(--accent-purple);">Layer 4+ — ICMP Payload</span>
-            </div>
-            <div class="packet-field">
-                <span class="field-name">Type</span>
-                <span class="field-value">8 (Echo Request)</span>
-            </div>
-            <div class="packet-field">
-                <span class="field-name">Code</span>
-                <span class="field-value">0</span>
-            </div>
-            <div class="packet-field">
-                <span class="field-name">Data Size</span>
-                <span class="field-value">32 bytes</span>
-            </div>
+    <div class="packet-layer">
+        <div class="packet-layer-title">
+            <span class="layer-dot" style="background: var(--accent-green);"></span>
+            <span style="color: var(--accent-green);">Layer 3 — Network (IPv4)</span>
+        </div>
+        <div class="packet-field">
+            <span class="field-name">Version</span>
+            <span class="field-value"></span> </div>
+        <div class="packet-field">
+            <span class="field-name">Header Length</span>
+            <span class="field-value"></span> </div>
+        <div class="packet-field">
+            <span class="field-name">TTL (Time To Live)</span>
+            <span class="field-value"></span> </div>
+        <div class="packet-field">
+            <span class="field-name">Protocol</span>
+            <span class="field-value"></span> </div>
+        <div class="packet-field">
+            <span class="field-name">Source IP</span>
+            <span class="field-value" style="color: var(--accent-pink);">192.168.0.65 (IP di PC-Alfa1)</span>
+        </div>
+        <div class="packet-field">
+            <span class="field-name">Destination IP</span>
+            <span class="field-value" style="color: var(--accent-pink);">192.168.0.66 (IP di PC-Alfa2)</span>
         </div>
     </div>
+</div>
 
     <div class="img-placeholder">
 	 <img src = "Screenshot14_OsiModel.png">
@@ -1526,16 +1499,16 @@ Default Gateway: <span class="comment">(lasciare vuoto)</span>
                     PC-Alfa1 > Command Prompt
                 </div>
                 <div class="code-body">
-<span class="cmd">C:\&gt;</span> ping <span class="placeholder">192.168.0.______</span>  <span class="comment">&lt;-- IP di PC-Beta1</span>
+<span class="cmd">C:\&gt;</span> ping <span class="placeholder">192.168.0.1</span>  <span class="comment">&lt;-- IP di PC-Beta1</span>
 
-<span class="output">Pinging 192.168.0.______ with 32 bytes of data:</span>
+<span class="output">Pinging 192.168.0.1 with 32 bytes of data:</span>
 
 <span class="highlight">Request timed out.</span>
 <span class="highlight">Request timed out.</span>
 <span class="highlight">Request timed out.</span>
 <span class="highlight">Request timed out.</span>
 
-<span class="output">Ping statistics for 192.168.0.______:</span>
+<span class="output">Ping statistics for 192.168.0.1:</span>
 <span class="output">    Packets: Sent = 4, Received = 0, Lost = 4 (100% loss)</span>
                 </div>
             </div>
